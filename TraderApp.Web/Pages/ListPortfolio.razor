@@ -1,0 +1,36 @@
+﻿@page "/"
+@inherits ListPortfolioBase
+
+<div class="sreen">
+
+
+@if (securities == null)
+{
+    <h1>loading..</h1>
+}else{
+
+
+        <div class="d-flex align-content-start flex-wrap">
+        @foreach (var v in securities)
+    {
+
+
+            
+            <div class="card card1" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">@v.FullName</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">@v.ShortName</h6>
+                    <p>Bought $@v.BoughtPrice</p>
+                    <p >Sold $@v.SoldPrice</p>
+                    <p>Profit $@(v.SoldPrice-v.BoughtPrice)</p>
+                    <a href="#" class="card-link">Card link</a>
+                    <a href="#" class="card-link">Another link</a>
+                </div>
+            </div>
+           
+
+
+    }
+</div>
+}
+</div>
