@@ -18,13 +18,16 @@ namespace TraderApp.Model
    
             SoldPrice = soldPrice;
         }
+        public Securities()
+        {
 
+        }
         public int id { get; set; }
         public string ShortName { get; set; }
         public string FullName { get; set; }
-        public DateTime BoughtDate { get; set; }
+        
         public double BoughtPrice { get; set; }
-        public DateTime SoldDate { get; set;}
+
         public double SoldPrice { get; set; }
     }
 }

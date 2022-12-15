@@ -1,0 +1,57 @@
+﻿@using TraderApp.Web.Services;
+
+
+<nav class="navbar navbar-light bg-light">
+  <div class="d-flex">
+        <input class="form-control mysearchbar " placeholder="enter a stock ticker " aria-label="Search" @bind-value=istockserivce.tag @onkeypress="resetValue">
+  
+    <button class="btn btn-outline-success" type="submit" @onclick="istockserivce.getStockPrice">Search</button>
+</div>
+   
+
+
+
+
+</nav>
+@if (istockserivce.stockPrice == "Too much request")
+{
+    <div class="alert alert-danger" role="alert">
+        Only 5 request per minute 
+    </div>
+
+
+}
+else if (istockserivce.stockPrice == "not a valid tag")
+{
+    <div class="alert alert-danger" role="alert">
+        Its not a valid tag
+    </div>
+
+}
+else
+{
+    @if (istockserivce.tag != null && istockserivce.tag != String.Empty && istockserivce.stockPrice != null)
+    {
+
+        <div class="alert alert-primary" role="alert">
+            Last opening price for @istockserivce.tag is $@istockserivce.stockPrice
+        </div>
+    }
+
+}
+@code {
+    [Inject]
+    IStockService istockserivce { get; set; }
+
+    public void resetValue()
+    {
+        istockserivce.stockPrice = null;    
+
+    }
+
+
+
+
+
+
+}

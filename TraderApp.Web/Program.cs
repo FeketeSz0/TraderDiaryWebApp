@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
+using TraderApp.Web.Modells;
 using TraderApp.Web.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,7 +12,8 @@ builder.Services.AddHttpClient<ISecuService, SecuService>(c =>
 {
     c.BaseAddress = new Uri("https://localhost:7238/");
 });
-
+builder.Services.AddScoped<IStockService, StockService>();
+builder.Services.AddAutoMapper(typeof(EditFormModel));
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

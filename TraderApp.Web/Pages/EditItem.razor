@@ -1,0 +1,9 @@
+﻿@inherits EditItemBase
+
+<EditForm Model="@editformmodel">
+    <InputText id="soldPrice" class="form-control" placeholder = "$Sold on" @bind-Value="editformmodel.SoldPrice"/>
+  
+</EditForm>
+<button class="btn btn-primary sellbutton" @onclick="Edit_Button">Sell</button>
+
+

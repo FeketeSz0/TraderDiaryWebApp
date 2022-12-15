@@ -7,5 +7,6 @@ namespace TraderApp.Api.Repositories
         public void addSecu(Securities secu);
         public void deleteSecu(int id);
         public IEnumerable<Securities> getAll();
+        public void updateSecu(Securities security);
     }
 }

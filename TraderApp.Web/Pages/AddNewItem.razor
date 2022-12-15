@@ -1,0 +1,27 @@
+﻿@inherits AddNewItemBase
+
+
+
+ <div class="card" style="width: 18rem;">
+                <div class="card-header">
+                    <h5 class="card-title card-mytitle">Add new item</h5>
+
+                </div>
+                <div class="card-body">
+
+
+                  <EditForm Model="@editFormModel" >
+                  <InputText id="name" class="form-control" placeholder = "FullName" @bind-Value="editFormModel.FullName"/>
+                        <InputText id="name" class="form-control" placeholder = "Tag" @bind-Value="editFormModel.ShortName"/>
+                   <InputText id="boughtPrice" class="form-control" placeholder="Bought on $" @bind-Value="editFormModel.BoughtPrice" />
+
+                      
+                </EditForm>
+
+
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-primary" type="submit" @onclick="HandleValidSubmit">Add new Item</button>
+
+                </div>
+            </div>

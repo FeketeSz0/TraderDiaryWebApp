@@ -11,11 +11,16 @@ namespace TraderApp.Web.Pages
         [Parameter]
         public Securities security { get; set; }
         public IEnumerable<Securities> securities { get; set; }
-
+        
+        
         protected override async Task OnInitializedAsync()
         {
            securities =  ( await isSecuServiceis.getSecurities()).ToList();
             
         }
+
+     
+
+
     }
 }

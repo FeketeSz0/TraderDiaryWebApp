@@ -31,10 +31,19 @@ namespace TraderApp.Api.Controllers
 
         }
 
-        [HttpDelete]
+        [HttpDelete("{id:int}")]
         public ActionResult<Securities> deleteSecu(int id) {
             securitiesRepositories.deleteSecu(id);
             return Ok();
         }
+
+
+        [HttpPut]
+        public ActionResult<Securities> updateSecu(Securities security) {
+            securitiesRepositories.updateSecu(security);
+            return Ok();
+        }
+
+
     }
 }

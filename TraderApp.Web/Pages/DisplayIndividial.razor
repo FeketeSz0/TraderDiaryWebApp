@@ -1,0 +1,42 @@
+﻿@inherits DisplayIndividualBase
+
+
+<div class="card" style="width: 18rem;">
+    <div class="card-header">
+        <h5 class="card-title card-mytitle">@Securitiy.FullName (@Securitiy.ShortName)</h5>
+
+    </div>
+        <div class="card-body">
+      <ul class="list-group list-group-flush">
+        @if (isEdit == false)
+        {
+            
+            <li class="list-group-item">Bought $@Securitiy.BoughtPrice</li>
+            @if (@Securitiy.SoldPrice != 0)
+            {
+               
+        <li class="list-group-item">Sold $@Securitiy.SoldPrice</li>
+        <li class="list-group-item @profitCss">Profit $@profit</li>
+                    
+                
+
+                
+            }
+
+            else
+            
+                {
+                    <li class="list-group-item ">Holding..</li>
+                }
+        }
+        else
+        {
+            <EditItem securities="Securitiy"></EditItem>
+        }
+    </ul>
+    </div>
+    <div class="card-footer">
+        <button class="btn btn-primary" @onclick= "editbutton">Edit</button>
+         <button class="btn btn-danger" @onclick= "deleteButton">Delete</button>
+    </div>
+</div>
