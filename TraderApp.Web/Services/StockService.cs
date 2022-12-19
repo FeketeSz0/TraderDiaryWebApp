@@ -8,7 +8,7 @@ namespace TraderApp.Web.Services
     public class StockService : IStockService
     {
 
-        private readonly string apikey = "bKGaDxDDzrb0bZOMvpxZ3BFnAGKsWcwq";
+        private readonly string apikey = "add your valid polygon.io apikey";
         public string stockPrice { get; set; } 
         public string tag { get; set; }
 
